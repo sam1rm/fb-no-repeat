@@ -1,0 +1,18 @@
+{
+    "manifest_version":2,
+    "name":"Facebook No Repeat",
+    "version": "0.1",
+    "description":"Never see the same stories on your feed. Make your feed-scrolling more efficient and get back to work.",
+    "browser_action":  {
+        "default_icon": "static/img/icon.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "content_scripts": [ {
+        "js": ["lib/jquery.js", "no-repeat.js"],
+        "matches":["*://*.facebook.com/*"],
+        "run_at":"document_idle"
+    }]
+}
